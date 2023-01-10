@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+}
+
+.calc {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: black;
+    width: 340px;
+    height: 600px;
+    border-radius: 15px;
+}
+
+.calc td button {
+    display: block;
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+}
+
+#resultado {
+    display: block;
+    text-align: right;
+    font-size: 40px;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 130px;
+    line-height: 100px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: scroll;
+}
