@@ -1,0 +1,112 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var puedoDibujar = false;
+    var colores = "blue";
+
+    function dibujarCirculo(evento, colores) {
+
+        if (puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = colores;
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+    function cuadrado(x, y, color) {
+        //Colorear recuadro por secciones.
+        pincel.fillStyle = color; //propiedad Definimos el color
+        pincel.fillRect(x, y, 50, 50); //función Definimos el tamaño en coordenadas
+        pincel.strokeStyle = "black"; //borde Definimos el color y grosor del borde
+        pincel.strokeRect(x, y, 50, 50); //borde Definimos el contorno de la figura
+    };
+
+    function paletaColores() {
+        cuadrado(0, 0, "red");
+        cuadrado(50, 0, "green");
+        cuadrado(100, 0, "blue");
+
+    };
+
+    function habilitarDibujar() {
+
+        puedoDibujar = true;
+    };
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    };
+
+    function puedeDisenharArea(xCoordenada, yCoordenada) {
+
+        if ((xCoordenada >= 0 && xCoordenada < (3 * 50 + 5)) && (yCoordenada >= 0 && yCoordenada < (50 + 5))) {
+
+            return false;
+        } else {
+
+            return true;
+        };
+    };
+
+    function capturarMovimientoDelMouse(evento) {
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if (puedeDisenharArea(x, y)) {
+
+            dibujarCirculo(x, y, colores);
+        };
+
+    };
+
+    function seleccionarColor(evento) {
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        //Cada condición altera el color de la variable colorActual
+
+        //Comenzamos por la condición del eje Y que es común para todas
+        if (y > 0 && y < (0 + 50)) {
+
+            if (x > 0 && x < (0 + 50)) {
+
+                colores = "red";
+                console.log(colores);
+
+            } else if (x > 50 && x < (50 + 50)) {
+
+                colores = "green";
+
+            } else if (x > 100 && x < (100 + 50)) {
+
+                colores = "blue";
+
+            };
+        };
+    };
+
+    pantalla.onmousemove = capturarMovimientoDelMouse;
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+    paletaColores();
+
+    pantalla.onclick = seleccionarColor;
+
+
+</script>

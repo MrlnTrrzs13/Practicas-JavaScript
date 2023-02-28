@@ -1,0 +1,36 @@
+<meta charset= "UTF-8">
+<h1>Programa Inicio de Sesión.</h1>
+<br>
+<br>
+
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+		document.write("<br>");
+	};
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea();
+	};
+
+    var usuario = "alura";
+    var password = "alura321";
+    var intento = 1;
+    var intentoMax = 3;
+
+    for(intento = 1; intento <= 3; intento++) {
+        var usuarioIngresado = prompt("Ingrese su usuario");
+        var passwordIngresado = prompt("Ingrese su contraseña");
+
+        if(usuarioIngresado == usuario && passwordIngresado == password) {
+            alert("Bienvenido al sistema " + usuario);
+            intento = intentoMax;
+        } else { 
+            if(intento == 3) {
+                alert("Agotaste el número permitido de intentos.");
+            } else {
+                alert("Inicio de sesión invalido. Favor intente de nuevo.");
+            }
+        }
+    }
+</script>

@@ -1,0 +1,23 @@
+<meta charset ="UTF-8">
+<h1>Programa que imprime los números pares entre 1-100.</h1>
+<br>
+<br>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+		document.write("<br>");
+	};
+	function imprimir (frase) {
+		document.write(frase);
+		saltarLinea();
+	};
+
+    numeroPar = 2;
+
+    imprimir("Los numero pares son:");
+    while (numeroPar <= 100) {
+        imprimir(numeroPar);
+        var numeroPar = numeroPar + 2;
+    };
+    imprimir("fin");
+    </script>

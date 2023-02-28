@@ -1,0 +1,81 @@
+<meta charset="UTF8">
+<h1>PROGRAMA PARA CALCULAR EL INDICE DE MASA CORPORAL</h1>
+<br>
+<br>
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+	};
+
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea();
+	};
+  
+	function calcularImc3(peso, altura) {
+		return (peso / (altura * altura));
+	};
+  
+	nombre = prompt("Ingrese su nombre:");
+  pesoInform = prompt(nombre + ", Ingrese su peso:");
+	alturaInform = prompt(nombre + ", Ingrese su altura:");
+
+	imcCalculado = calcularImc3(pesoInform, alturaInform);
+	imprimir(nombre + ", su IMC calculado es: " + imcCalculado);
+
+	if (imcCalculado < 18.5) {
+		imprimir("IMC Abajo de lo recomendado");
+	};
+	if (imcCalculado >= 18.5 && imcCalculado <= 24.9) {
+		imprimir("IMC Normal");
+	};
+	if (imcCalculado >=25 && imcCalculado <=29.9) {
+		imprimir("IMC Considerado como Sobrepeso");
+	};
+	if (imcCalculado >=30) {
+		imprimir("IMC Considerado como Obesidad");
+	};
+
+	/*function calcularImc(peso, altura) {
+	  imc = peso / (altura * altura);
+	  return(imc);
+	};
+	
+	function calcularImc2(peso, altura) {
+		return (peso / (altura * altura));
+	};
+	imprimir("El promedio del IMC calculado de Gabriela y Luisa es: " + 
+	(calcularImc2(60, 1.70) + calcularImc2(55, 1.60)/2));
+
+	function calcularImc(peso1, altura1, nombre1, peso2, altura2, nombre2) {
+		imc1 = peso1 / (altura1 * altura2);
+		imc2 = peso2 / (altura2 * altura2);
+		//imprimir ("El IMC calculado de " + nombre + " es: " + imc);
+		imprimir("El promedio del IMC calculado de " + nombre1 + " y " + 
+		nombre2 + " es: " + (imc1 + imc2) / 2);
+	};
+
+	var imcChristian = calcularImc(71, 1.72);
+	var imcFelipe = calcularImc(75, 1.73);
+
+	imprimir("El promedio del IMC calculado de Christian y Felipe es: " + 
+	(imcChristian + imcFelipe)/2);
+  
+	calcularImc(71, 1.72, "Christian", 75, 1.73, "Felipe");
+	calcularImc(60, 1.70, "Gabriela", 55, 1.60, "Luisa");
+  calcularImc(71,1.72,"Christian");
+	calcularImc(75,1.73,"Felipe");
+  
+	pesoChristian = 71;
+	alturaChristian = 1.72;
+	imcChristian = calcularImc(pesoChristian, alturaChristian);
+	imprimir("El IMC de Christian es: " + imcChristian);
+
+	pesoFelipe = 75;
+	alturaFelipe = 1.73;
+	//imcFelipe = pesoFelipe / (alturaFelipe * alturaFelipe);
+  imcFelipe = calcularImc(pesoFelipe, alturaFelipe);
+	imprimir("El IMC de Felipe es: " + imcFelipe);*/
+</script>

@@ -1,0 +1,57 @@
+<meta charset= "UTF-8">
+<h1>JUEGO DE ADIVINACIÓN</h1>
+<br>
+<br>
+
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+		document.write("<br>");
+	};
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea();
+	};
+
+	var numDefault = Math.round(Math.random()*10);
+	var intentos = 3;
+	var contador = 1;
+
+	while (contador <= intentos) {
+		var numeroLanzado = parseInt(prompt("Ingrese un número entre 1-10"));
+		
+		if (numDefault == numeroLanzado) {
+			alert("Usted acertó, en el intento número: " + contador + ". El número fué: " + numDefault);
+			break;
+		} else  {
+			alert("Usted erró.");
+			}
+
+		contador++;
+
+	};
+
+	if (numDefault == numeroLanzado) {
+		imprimir("Usted acertó, en el intento número: " + contador + ". El número fué: " + numDefault);
+	} else {
+			imprimir ("Usted erró. El número fué: " + numDefault);
+	};
+	imprimir("fin");
+	
+	/*function sorteo (n) {
+		return Math.random(Math.random()*n);
+	};
+
+	var numDefault = sorteo(10);
+	var numLanzado = parseInt(prompt("Ingrese un número entre  0-10"));
+
+	if (numDefault == numLanzado) {
+		imprimir("Usted acertó");
+	} else {
+		  if (numLanzado > numDefault){
+			  imprimir("Ingrese un número entre 0-10");
+		  }	else {
+			    imprimir("Usted erró. El número por default es: " + numDefault);
+		  }
+	}*/
+</script>

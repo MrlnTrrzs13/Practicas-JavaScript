@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+<h1>AÑO MUNDIAL DE LA FIFA.</h1>
+<br>
+<br>
+
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+		document.write("<br>");
+	};
+	function imprimir (frase) {
+		document.write(frase);
+		saltarLinea();
+	};
+
+	const m1930 = "Cede: Uruguay. Campeòn: Uruguay.";
+	const m1934 = "Cede: Italia. Campeòn: Italia.";
+  const m1938 = "Cede: Francia. Campeòn: Italia.";
+	const m1942 = "Mundial cancelado.";
+	const m1946 = "Mundial cancelado.";
+	const m1950 = "Cede: Brasil. Campeòn: Uruguay.";
+	const m1954 = "Cede: Suiza. Campeòn: Alemania.";
+	const m1958 = "Cede: Suecia. Campeòn: Brasil.";
+	const m1962 = "Cede: Chile. Campeòn: Brasil.";
+	const m1966 = "Cede: Inglaterra. Campeòn: Inglaterra.";
+	const m1970 = "Cede: México. Campeòn: Brasil.";
+	const m1974 = "Cede: Alemania. Campeòn: Alemania";
+	const m1978 = "Cede: Argentina. Campeòn: Argentina.";
+	const m1982 = "Cede: España. Campeòn: Italia";
+	const m1986 = "Cede: México. Campeòn: Argentina";
+	const m1990 = "Cede: Italia Campeòn: Alemania";
+	const m1994 = "Cede: Usa. Campeòn: Brasil.";
+	const m1998 = "Cede: Francia. Campeòn: Francia.";
+	const m2002 = "Cede: Corea/Japón Campeòn: Brasil.";
+	const m2006 = "Cede: Alemania. Campeòn: Italia.";
+	const m2010 = "Cede: Sudáfrica. Campeòn: España.";
+	const m2014 = "Cede: Brasil. Campeòn: Alemania.";
+	const m2018 = "Cede: Rusia. Campeòn: Francia.";
+	const m2022 = "Cede: Qatar. Campeòn: Argentina.";
+	var yearWorld = 1930;
+	var limite = parseInt(prompt("Ingrse el año limite para calcular."));
+	
+
+	while (yearWorld <= limite) {
+		imprimir("Mundial " + yearWorld);
+		yearWorld = (yearWorld + 4);
+	};
+		} 
+</script>

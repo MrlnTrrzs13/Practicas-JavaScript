@@ -1,0 +1,66 @@
+<canvas width="600" height="400"></canvas> <!--Comando para usar formas-->
+
+<script>
+    function cuadrado (x, y, color){
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        //Colorear recuadro por secciones.
+        pincel.fillStyle = color; //propiedad Definimos el color
+        pincel.fillRect(x,y,50,50); //función Definimos el tamaño en coordenadas
+        pincel.strokeStyle = "black"; //borde Definimos el color y grosor del borde
+        pincel.strokeRect(x,y,50,50); //borde Definimos el contorno de la figura
+    };
+    var x = 0;
+    while(x < 600){
+        cuadrado(x,0,"red");
+        cuadrado(x,50,"yellow");
+        cuadrado(x,100,"green");
+        x = x + 50;
+    };
+
+    for (var z = 0; z < 600; z = z + 50){
+        cuadrado(z,200,"green");
+        cuadrado(z,250,"white");
+        cuadrado(z,300,"red");
+    };
+/*  cuadrado(0,0,"green");
+    cuadrado(50,0,"green");
+    cuadrado(100,0,"green"); */
+
+/*     function cuadradoGreen (x, y){
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        //Colorear recuadro por secciones.
+        pincel.fillStyle = "green"; //propiedad Definimos el color
+        pincel.fillRect(x,y,50,50); //función Definimos el tamaño en coordenadas
+        pincel.strokeStyle = "black"; //borde Definimos el color y grosor del borde
+        pincel.strokeRect(x,y,50,50); //borde Definimos el contorno de la figura
+    };
+    function cuadradoYellow (x, y){
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        //Colorear recuadro por secciones.
+        pincel.fillStyle = "yellow"; //propiedad Definimos el color
+        pincel.fillRect(x,y,50,50); //función Definimos el tamaño en coordenadas
+        pincel.strokeStyle = "black"; //borde Definimos el color y grosor del borde
+        pincel.strokeRect(x,y,50,50); //borde Definimos el contorno de la figura
+    };
+    function cuadradoRed (x, y){
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        //Colorear recuadro por secciones.
+        pincel.fillStyle = "red"; //propiedad Definimos el color
+        pincel.fillRect(x,y,50,50); //función Definimos el tamaño en coordenadas
+        pincel.strokeStyle = "black"; //borde Definimos el color y grosor del borde
+        pincel.strokeRect(x,y,50,50); //borde Definimos el contorno de la figura
+    };
+    cuadradoRed(0,0);
+    cuadradoYellow(0,50);
+    cuadradoGreen(0,100); */
+    
+
+</script>

@@ -1,0 +1,30 @@
+<meta charset= "UTF-8">
+<h1>Programa Estrellas.</h1>
+<br>
+<br>
+
+<script>
+	function saltarLinea() {
+		document.write("<br>");
+		document.write("<br>");
+	};
+	function imprimir(frase) {
+		document.write(frase);
+		saltarLinea();
+	};
+
+    for(var lineas = 1; lineas <= 3; lineas++) {
+        for(var columnas = 1; columnas <= 10; columnas++) {
+            document.write("*");
+        }
+        saltarLinea();
+    }
+    saltarLinea();
+    saltarLinea();
+    
+    /*for (var lineas =1; lineas<=3; lineas++){
+        imprimir("**********");
+    }*/
+    imprimir("fin");
+
+</script>
